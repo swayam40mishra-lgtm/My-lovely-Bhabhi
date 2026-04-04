@@ -1,13 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // 🔥 TEXT CONTENT (YOU CAN EDIT THIS)
-  const titleText = "Some people don’t just come into our life… they quietly become our life ~ Swayam Mishra for his bhabhi..";
+  const titleText = "Some people don’t just come into our life… they quietly become our life and that's you renu mishra ";
 
   const subtitleText = "Not everything can be said to a mother… maybe that’s why God gave us bhabhis. And you are the best example of that, Renu Mishra";
 
   let i = 0;
   let j = 0;
+const intro = document.getElementById("intro");
+const enterBtn = document.getElementById("enterBtn");
 
+if (enterBtn) {
+  enterBtn.addEventListener("click", () => {
+    intro.style.opacity = "0";
+    intro.style.transition = "1s";
+
+    setTimeout(() => {
+      intro.style.display = "none";
+    }, 1000);
+  });
+}
   // 🎬 TYPEWRITER EFFECT
   function typeTitle() {
     const titleEl = document.getElementById("typeTitle");
