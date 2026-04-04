@@ -1,3 +1,5 @@
+alert("JS is working");
+
 document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll(".reveal");
   const navLinks = document.querySelectorAll(".nav a");
