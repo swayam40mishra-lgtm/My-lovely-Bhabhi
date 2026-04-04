@@ -154,6 +154,19 @@ a {
 }
 
 .hero-content {
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   width: min(860px, 100%);
   text-align: center;
   padding: 28px 22px;
