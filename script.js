@@ -11,7 +11,10 @@ const intro = document.getElementById("intro");
 const enterBtn = document.getElementById("enterBtn");
 
 if (enterBtn) {
-  enterBtn.addEventListener("click", () => {
+  enterBtn.addEventListener("click", () => { const music = document.getElementById("bgMusic");
+
+music.volume = 0.3;
+music.play();
     intro.style.opacity = "0";
     intro.style.transition = "1s";
 
