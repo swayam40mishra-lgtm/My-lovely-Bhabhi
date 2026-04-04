@@ -1,4 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { const intro = document.getElementById("intro");
+
+if (intro) {
+  intro.style.display = "flex";
+  intro.style.opacity = "1";
+}
 
   // 🔥 TEXT CONTENT (YOU CAN EDIT THIS)
   const titleText = "Some people don’t just come into our life… they quietly become our life and that's you renu mishra ";
