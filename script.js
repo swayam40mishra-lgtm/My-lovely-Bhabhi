@@ -13,23 +13,36 @@ const enterBtn = document.getElementById("enterBtn");
 if (enterBtn) {
   enterBtn.addEventListener("click", () => { const music = document.getElementById("bgMusic");
 
-  const tunnel = document.getElementById("tunnel");
 
-  // hide intro
+  const tunnel = document.getElementById("tunnel");
+  const ring = document.querySelector(".tunnel-ring");
+
+  // hide intro instantly
   intro.style.opacity = "0";
 
   setTimeout(() => {
     intro.style.display = "none";
 
-    // show tunnel
-    tunnel.style.display = "flex";
+    // show tunnel instantly (no delay)
+    tunnel.style.opacity = "1";
 
-    // after animation, remove tunnel
+    // trigger animation manually
+    ring.style.transition = "transform 1.2s ease-out, opacity 1.2s";
+    ring.style.transform = "scale(30)";
+    ring.style.opacity = "0";
+
+    // remove tunnel after animation
     setTimeout(() => {
-      tunnel.style.display = "none";
-    }, 1500);
+      tunnel.style.opacity = "0";
+      tunnel.style.pointerEvents = "none";
+    }, 1200);
 
-  }, 800);
+  }, 300);
+
+});
+  ;
+
+
 
 });
 }
