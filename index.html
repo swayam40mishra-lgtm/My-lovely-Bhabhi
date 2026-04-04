@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Someone Special</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
 
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span class="brand-text">A Small Thank You</span>
+    </div>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">Message</a>
+      <a href="#memories">Memories</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#letter">Letter</a>
+      <a href="#final">End</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section hero reveal">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="pill">A page made with respect</div>
+
+        <h1 class="editable title" contenteditable="true" data-placeholder="Write your opening line here..."></h1>
+
+        <p class="editable subtitle" contenteditable="true" data-placeholder="Write your small intro here..."></p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#about">Start</a>
+          <a class="btn secondary" href="#letter">Open Letter</a>
+        </div>
+
+        <p class="scroll-hint">Scroll down</p>
+      </div>
+    </section>
+
+    <section id="about" class="section reveal">
+      <div class="section-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Message</p>
+          <h2 class="editable section-title" contenteditable="true" data-placeholder="Write the main message title here..."></h2>
+        </div>
+
+        <div class="panel">
+          <div class="editable block-text" contenteditable="true" data-placeholder="Write the main thank-you message here..."></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="memories" class="section reveal">
+      <div class="section-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Memories</p>
+          <h2 class="editable section-title" contenteditable="true" data-placeholder="Write the memories heading here..."></h2>
+        </div>
+
+        <div class="grid cards">
+          <article class="card">
+            <div class="card-label">Memory 1</div>
+            <div class="editable card-text" contenteditable="true" data-placeholder="Write memory 1..."></div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Memory 2</div>
+            <div class="editable card-text" contenteditable="true" data-placeholder="Write memory 2..."></div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Memory 3</div>
+            <div class="editable card-text" contenteditable="true" data-placeholder="Write memory 3..."></div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Memory 4</div>
+            <div class="editable card-text" contenteditable="true" data-placeholder="Write memory 4..."></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section reveal">
+      <div class="section-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h2 class="editable section-title" contenteditable="true" data-placeholder="Write the gallery heading here..."></h2>
+        </div>
+
+        <div class="grid gallery-grid">
+          <div class="photo-slot">
+            <span>Photo 1</span>
+            <div class="editable slot-text" contenteditable="true" data-placeholder="Add a short caption..."></div>
+          </div>
+          <div class="photo-slot">
+            <span>Photo 2</span>
+            <div class="editable slot-text" contenteditable="true" data-placeholder="Add a short caption..."></div>
+          </div>
+          <div class="photo-slot">
+            <span>Photo 3</span>
+            <div class="editable slot-text" contenteditable="true" data-placeholder="Add a short caption..."></div>
+          </div>
+          <div class="photo-slot">
+            <span>Photo 4</span>
+            <div class="editable slot-text" contenteditable="true" data-placeholder="Add a short caption..."></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="letter" class="section reveal">
+      <div class="section-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Letter</p>
+          <h2 class="editable section-title" contenteditable="true" data-placeholder="Write the letter heading here..."></h2>
+        </div>
+
+        <div class="panel tall">
+          <div class="editable block-text" contenteditable="true" data-placeholder="Write your full letter here..."></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="final" class="section reveal">
+      <div class="section-wrap center">
+        <div class="final-card">
+          <p class="eyebrow">End</p>
+          <h2 class="editable section-title center-text" contenteditable="true" data-placeholder="Write the final thank-you line here..."></h2>
+          <p class="editable final-note" contenteditable="true" data-placeholder="Write your sign-off here..."></p>
+          <a class="btn primary" href="#home">Back to top</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Made with care</span>
+    <span>•</span>
+    <span>Your tribute page</span>
+  </footer>
+
+  <button id="topBtn" class="top-btn" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
