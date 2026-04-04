@@ -53,5 +53,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   topBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  });const titleText = " Some people don’t just come into our life…
+they quietly become our life ~ Swayam mishra for his bhabhi  ..";
+const subtitleText = "Not everything can be said to a mother…
+maybe that’s why God gave us bhabhis.
+And you are the best example of that, Renu Mishra";
+
+let i = 0;
+let j = 0;
+
+function typeTitle() {
+  if (i < titleText.length) {
+    document.getElementById("typeTitle").innerHTML += titleText.charAt(i);
+    i++;
+    setTimeout(typeTitle, 50);
+  } else {
+    typeSubtitle();
+  }
+}
+
+function typeSubtitle() {
+  if (j < subtitleText.length) {
+    document.getElementById("typeSubtitle").innerHTML += subtitleText.charAt(j);
+    j++;
+    setTimeout(typeSubtitle, 30);
+  }
+}
+
+window.onload = () => {
+  typeTitle();
+};
+  
 });
+
