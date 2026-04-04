@@ -13,15 +13,25 @@ const enterBtn = document.getElementById("enterBtn");
 if (enterBtn) {
   enterBtn.addEventListener("click", () => { const music = document.getElementById("bgMusic");
 
-music.volume = 0.3;
-music.play();
-    intro.style.opacity = "0";
-    intro.style.transition = "1s";
+  const tunnel = document.getElementById("tunnel");
 
+  // hide intro
+  intro.style.opacity = "0";
+
+  setTimeout(() => {
+    intro.style.display = "none";
+
+    // show tunnel
+    tunnel.style.display = "flex";
+
+    // after animation, remove tunnel
     setTimeout(() => {
-      intro.style.display = "none";
-    }, 1000);
-  });
+      tunnel.style.display = "none";
+    }, 1500);
+
+  }, 800);
+
+});
 }
   // 🎬 TYPEWRITER EFFECT
   function typeTitle() {
@@ -31,7 +41,7 @@ music.play();
     if (i < titleText.length) {
       titleEl.innerHTML += titleText.charAt(i);
       i++;
-      setTimeout(typeTitle, 50);
+      setTimeout(typeTitle, 100);
     } else {
       typeSubtitle();
     }
