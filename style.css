@@ -1,3 +1,44 @@
+/* Intro Overlay */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
+}
+
+/* Intro Text */
+#intro-screen p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Button */
+#intro-screen button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: 1px solid #d4af37;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#intro-screen button:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+
 /* 🔥 RESET */
 * {
   margin: 0;
