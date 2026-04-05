@@ -1,69 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Letter from Deverji</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Letter from Deverji</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Premium Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<div id="intro-screen" class="fade-in">
-    <p>
-        This page is dedicated to you <b>Renu Mishra</b>.<br><br>
-        Why are you waiting here?<br>
-        Go ahead… something special is waiting for you.
-    </p>
+<body class="home-page">
 
-    <button onclick="enterSite()">Enter ✨</button>
-</div>
-<body>
-
-<div class="container fade-in">
-
-    <h1>A Letter from Deverji</h1>
-
-    <p>
-        I don’t know how to fully express how much you matter to me.<br><br>
-        Just a month ago, on 5 March, I saw you for the first time… and now, you’ve become an important part of my life.
-    </p>
-
-    <p>
-        You’ve helped me shape my thinking and given me a space where I can share things openly.<br><br>
-        Sometimes you guide me like someone who truly understands… and sometimes you’re just someone I can talk to freely.
-    </p>
-
-    <p>
-        Thank you for everything you’ve done for me.<br><br>
-        And yeah… I might have annoyed you with my messages 😁
-    </p>
-
-    <p class="highlight">
-        Something bigger is coming next… go ahead and explore.
-    </p>
-
-    <!-- BUTTONS -->
-    <div class="buttons">
-        <a href="story.html" class="btn">Open Our Story</a>
-        <a href="gallery.html" class="btn">Our Moments</a>
-        <a href="message.html" class="btn">Something for You</a>
-        <a href="more.html" class="btn">Explore More</a>
+  <!-- 🎬 INTRO SCREEN -->
+  <div id="intro-screen">
+    <div class="intro-overlay"></div>
+    <div class="intro-content">
+      <span class="intro-tag">A Special Letter</span>
+      <h1>
+        This page is dedicated to you,<br>
+        <span>Renu Mishra</span>.
+      </h1>
+      <p class="intro-subtext">
+        If you have come this far… don’t stop now.  
+        Something gentle, personal, and made only for you is waiting ahead.
+      </p>
+      <button id="homeEnterBtn" class="enter-btn">Enter ✨</button>
     </div>
+  </div>
 
-    <!-- FOOTER -->
-    <footer>
-        Made by 💟 Swayam Mishra
+  <!-- ✨ MAIN LETTER EXPERIENCE -->
+  <main class="home-experience">
+
+    <!-- Hero / Letter Intro -->
+    <section class="hero-letter fade-section">
+      <div class="hero-inner">
+        <span class="hero-label">A Personal Note</span>
+        <h1>A Letter from Deverji</h1>
+        <p class="hero-subtext">
+          Not every bond needs years to become meaningful.  
+          Sometimes, a single month is enough for someone to quietly become unforgettable.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Letter Card -->
+    <section class="letter-section fade-section">
+      <div class="letter-card">
+        <span class="letter-mark">For You</span>
+
+        <p>
+          I don’t think I can ever fully explain how much your presence has started to mean to me.
+          Just a little while ago — on <strong>5 March</strong> — I saw you for the first time,
+          and somehow, in such a short time, you became an important part of my world.
+        </p>
+
+        <p>
+          You gave me something rare:
+          a space where I could speak honestly,
+          think more clearly,
+          and feel understood without having to explain too much.
+        </p>
+
+        <p>
+          Sometimes, you guide me in ways that stay with me long after the conversation ends.
+          And sometimes, simply talking to you feels enough to make everything feel lighter.
+        </p>
+
+        <p>
+          Thank you — for your patience, your kindness, your words,
+          and even for tolerating all my messages… even the slightly annoying ones 😁
+        </p>
+
+        <p class="highlight-line">
+          This is only the beginning.  
+          There is something more waiting beyond this page.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="navigation-section fade-section">
+      <div class="section-heading">
+        <span class="section-tag">Continue the Journey</span>
+        <h2>Choose where you want to go next</h2>
+      </div>
+
+      <div class="buttons">
+        <a href="story.html" class="btn btn-gold">Open Our Story</a>
+        <a href="gallery.html" class="btn btn-outline">Our Moments</a>
+        <a href="message.html" class="btn btn-outline">Something for You</a>
+        <a href="more.html" class="btn btn-outline">Explore More</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer fade-section">
+      <p>Made with affection by <span>Swayam Mishra</span> 💟</p>
     </footer>
 
-</div>
+  </main>
 
-<!-- JS -->
-<script src="script.js"></script>
-
+  <!-- Shared JS -->
+  <script src="script.js"></script>
 </body>
 </html>
