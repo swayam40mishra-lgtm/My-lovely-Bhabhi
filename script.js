@@ -58,5 +58,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   scenes.forEach(scene => observer.observe(scene));
+document.addEventListener("DOMContentLoaded", () => {
 
+    // Fade-out on button click (smooth transition)
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function(e) {
+
+            const href = this.getAttribute("href");
+
+            // Only apply for internal links
+            if (href && !href.startsWith("#")) {
+                e.preventDefault();
+
+                document.body.style.opacity = "0";
+                document.body.style.transition = "0.5s ease";
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500);
+            }
+
+        });
+    });
+
+});
 });
