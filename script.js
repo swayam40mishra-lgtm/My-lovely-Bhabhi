@@ -132,26 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  document.addEventListener("DOMContentLoaded", () => {
-  const finalLines = document.querySelectorAll(".final-line");
-  const finalSign = document.querySelector(".final-sign");
-  const finalBtn = document.querySelector(".final-btn");
-
-  if (finalLines.length > 0) {
-    finalLines.forEach((line, index) => {
-      setTimeout(() => {
-        line.classList.add("show");
-      }, index * 2200);
-    });
-
-    setTimeout(() => {
-      if (finalSign) finalSign.classList.add("show");
-    }, finalLines.length * 2200 + 800);
-
-    setTimeout(() => {
-      if (finalBtn) finalBtn.classList.add("show");
-    }, finalLines.length * 2200 + 1800);
-  }
+  
 });
 });
 
