@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // =========================================
-  // INDEX PAGE INTRO
+  // INDEX PAGE INTRO SCREEN
+  // Works if:
+  // - id="intro-screen"
+  // - button id="homeEnterBtn"
   // =========================================
   const introScreen = document.getElementById("intro-screen");
   const homeEnterBtn = document.getElementById("homeEnterBtn");
@@ -26,7 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================================
-  // STORY PAGE INTRO + TUNNEL
+  // STORY PAGE INTRO + TUNNEL EFFECT
+  // Works if:
+  // - id="intro"
+  // - id="enterBtn"
+  // - id="tunnel"
+  // - class="tunnel-ring"
+  // - id="bgMusic" (optional)
   // =========================================
   const intro = document.getElementById("intro");
   const enterBtn = document.getElementById("enterBtn");
@@ -39,22 +48,22 @@ document.addEventListener("DOMContentLoaded", () => {
       if (enterBtn.dataset.clicked === "true") return;
       enterBtn.dataset.clicked = "true";
 
-      // Prevent repeated clicks visually
+      // Prevent multiple clicks
       enterBtn.style.pointerEvents = "none";
       enterBtn.style.opacity = "0.7";
 
-      // Play music
+      // Play music if exists
       if (music) {
         music.volume = 0.3;
         music.play().catch(() => {});
       }
 
-      // Activate tunnel
+      // Show tunnel animation
       if (tunnel) {
         tunnel.classList.add("active");
       }
 
-      // Animate ring
+      // Ring zoom effect
       if (ring) {
         setTimeout(() => {
           ring.style.transform = "scale(28)";
@@ -62,15 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 80);
       }
 
-      // Fade out intro
+      // Hide intro
       intro.classList.add("hidden");
 
-      // Remove intro from layout
       setTimeout(() => {
         intro.style.display = "none";
       }, 850);
 
-      // Fade tunnel away after animation
+      // Remove tunnel after effect
       if (tunnel) {
         setTimeout(() => {
           tunnel.classList.remove("active");
@@ -80,7 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================================
-  // SCROLL REVEAL (FOR .scene and .fade-section)
+  // SCROLL REVEAL ANIMATION
+  // Works for:
+  // - .scene
+  // - .fade-section
   // =========================================
   const revealItems = document.querySelectorAll(".scene, .fade-section");
 
@@ -90,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
+            obs.unobserve(entry.target); // reveal only once
           }
         });
       },
@@ -104,7 +115,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================================
+  // FINAL PAGE TYPEWRITER / LINE-BY-LINE REVEAL
+  // Works if final.html contains:
+  // - #finalLines
+  // - .final-line elements inside it
+  // =========================================
+  const finalLines = document.querySelectorAll(".final-line");
+
+  if (finalLines.length > 0) {
+    finalLines.forEach((line, index) => {
+      setTimeout(() => {
+        line.classList.add("show");
+      }, index * 2200); // each line appears one by one
+    });
+  }
+
+  // =========================================
   // SMOOTH INTERNAL PAGE TRANSITION
+  // For all internal links only
   // =========================================
   const links = document.querySelectorAll("a[href]");
 
