@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Last Thing...</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #0a0a0a 0%, #000000 70%);
+      color: #f8f4e8;
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .final-container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .line {
+      opacity: 0;
+      transform: translateY(25px);
+      margin: 18px 0;
+      font-size: clamp(1.2rem, 2vw, 2rem);
+      line-height: 1.8;
+      color: #f5f5f5;
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.15),
+                   0 0 16px rgba(212, 175, 55, 0.08);
+      transition: opacity 1.4s ease, transform 1.4s ease;
+    }
+
+    .line.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gold {
+      color: #d4af37;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3),
+                   0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .red {
+      color: #c0392b;
+      text-shadow: 0 0 10px rgba(192, 57, 43, 0.25),
+                   0 0 20px rgba(192, 57, 43, 0.12);
+    }
+
+    .final-sign {
+      margin-top: 40px;
+      opacity: 0;
+      font-size: 1rem;
+      color: #aaa;
+      letter-spacing: 1px;
+      transition: opacity 1.5s ease;
+    }
+
+    .final-sign.show {
+      opacity: 1;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #f5f5f5;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      background: rgba(255, 255, 255, 0.02);
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.6s ease;
+    }
+
+    .back-home.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-home:hover {
+      background: #d4af37;
+      color: #000;
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
+    }
+
+    /* subtle ambient glow */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212,175,55,0.06), transparent 70%);
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(30px);
+      pointer-events: none;
+    }
+
+    @media (max-width: 600px) {
+      .line {
+        margin: 14px 0;
+        line-height: 1.7;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="final-container">
+    <p class="line">Maybe this was just a website for others…</p>
+    <p class="line">But for me…</p>
+    <p class="line">It was a way to say <span class="gold">thank you</span>.</p>
+    <p class="line">For your <span class="gold">care</span>.</p>
+    <p class="line">For your <span class="gold">patience</span>.</p>
+    <p class="line">For being in my life.</p>
+    <p class="line gold red">You are truly special, Renu Mishra ❤️</p>
+
+    <p class="final-sign">— Your Dever, Swayam 💟</p>
+
+    <a href="index.html" class="back-home">Back to Home</a>
+  </div>
+
+  <script>
+    const lines = document.querySelectorAll(".line");
+    const sign = document.querySelector(".final-sign");
+    const button = document.querySelector(".back-home");
+
+    lines.forEach((line, index) => {
+      setTimeout(() => {
+        line.classList.add("show");
+      }, index * 2200);
+    });
+
+    setTimeout(() => {
+      sign.classList.add("show");
+    }, lines.length * 2200 + 800);
+
+    setTimeout(() => {
+      button.classList.add("show");
+    }, lines.length * 2200 + 1800);
+  </script>
+
+</body>
+</html>
