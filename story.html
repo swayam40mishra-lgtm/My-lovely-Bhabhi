@@ -143,7 +143,21 @@
 <audio id="bgMusic" loop>
   <source src="assets/songs/music.mp3" type="audio/mpeg">
 </audio>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const enterBtn = document.getElementById("enterBtn");
+  const music = document.getElementById("bgMusic");
 
+  if (enterBtn && music) {
+    enterBtn.addEventListener("click", function () {
+      music.volume = 0.3;
+      music.play().catch((err) => {
+        console.log("Music failed:", err);
+      });
+    });
+  }
+});
+</script>
 <script src="script.js"></script>
 </body>
 
