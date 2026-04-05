@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       enterBtn.style.pointerEvents = "none";
       enterBtn.style.opacity = "0.7";
 
-      // Play music (user gesture allows autoplay)
+      // Play music
       if (music) {
         music.volume = 0.3;
         music.play().catch(() => {});
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            obs.unobserve(entry.target); // reveal once only
+            obs.unobserve(entry.target);
           }
         });
       },
@@ -131,8 +131,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 450);
     });
   });
-  
-  
 });
-});
-
