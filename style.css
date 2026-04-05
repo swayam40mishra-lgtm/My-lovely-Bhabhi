@@ -663,3 +663,39 @@ span.highlight-text {
     padding: 26px 18px;
   }
 }
+/* 💌 MESSAGE FORM */
+.message-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message-form input,
+.message-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: #0a0a0a;
+  color: #f5f5f5;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.message-form input:focus,
+.message-form textarea:focus {
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.message-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.message-form button {
+  margin-top: 5px;
+}
