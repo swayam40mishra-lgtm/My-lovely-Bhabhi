@@ -5,7 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const tunnel = document.getElementById("tunnel");
   const ring = document.querySelector(".tunnel-ring");
   const music = document.getElementById("bgMusic");
+function enterSite() {
+    let intro = document.getElementById("intro-screen");
 
+    intro.style.transition = "opacity 0.8s ease";
+    intro.style.opacity = "0";
+
+    setTimeout(() => {
+        intro.style.display = "none";
+    }, 800);
+}
   // ✅ RESET INTRO
   if (intro) {
     intro.style.display = "flex";
