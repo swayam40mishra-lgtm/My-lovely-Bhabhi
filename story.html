@@ -5,66 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For Renu Mishra ❤️</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="story-page">
 
-<!-- 🎬 INTRO -->
-<div id="intro">
-  <div class="intro-content">
-    <h1>Bhabhi… this isn’t just a page.<br>It’s something I made… only for you.</h1>
-    <p id="enterBtn">Tap to enter</p>
+  <!-- 🎬 INTRO -->
+  <div id="intro">
+    <div class="intro-overlay"></div>
+    <div class="intro-content">
+      <span class="intro-tag">A Personal Message</span>
+      <h1>
+        This is not just a page…<br>
+        it is something I made,<br>
+        only for you.
+      </h1>
+      <p class="intro-subtext">
+        A few words. A few memories. A few feelings I never wanted to leave unsaid.
+      </p>
+      <button id="enterBtn" class="enter-btn">Tap to Enter</button>
+    </div>
   </div>
-</div>
 
-<!-- 🌌 TUNNEL -->
-<div id="tunnel">
-  <div class="tunnel-ring"></div>
-</div>
+  <!-- 🌌 TUNNEL TRANSITION -->
+  <div id="tunnel" aria-hidden="true">
+    <div class="tunnel-ring"></div>
+  </div>
 
-<!-- 🎭 MAIN EXPERIENCE -->
-<main>
+  <!-- 🎭 MAIN EXPERIENCE -->
+  <main class="story-experience">
 
-  <section class="scene">
-    <h1>You were never just a bhabhi…</h1>
-  </section>
+    <!-- Hero -->
+    <section class="scene hero-scene">
+      <div class="scene-content">
+        <span class="scene-label">For Renu Mishra</span>
+        <h1>You were never just my bhabhi…</h1>
+        <p>
+          Some people enter your life with a role.  
+          But a few stay with you as a feeling.
+        </p>
+      </div>
+    </section>
 
-  <section class="scene dark">
-    <h1>You became someone I could always talk to.</h1>
-  </section>
+    <!-- Scene 1 -->
+    <section class="scene dark">
+      <div class="scene-content">
+        <h2>You became someone I could always talk to.</h2>
+        <p>
+          In moments when I had too much on my mind,  
+          you somehow made things feel lighter — just by listening.
+        </p>
+      </div>
+    </section>
 
-  <section class="scene">
-    <h1>Even when you were busy… you replied.</h1>
-  </section>
+    <!-- Scene 2 -->
+    <section class="scene">
+      <div class="scene-content">
+        <h2>Even when life kept you busy… you still replied.</h2>
+        <p>
+          That may seem small to the world,  
+          but to me, it always meant more than you know.
+        </p>
+      </div>
+    </section>
 
-  <section class="scene dark">
-    <h1>You never ignored me.</h1>
-  </section>
+    <!-- Scene 3 -->
+    <section class="scene dark">
+      <div class="scene-content">
+        <h2>You never made me feel ignored.</h2>
+        <p>
+          You gave attention to my words,  
+          respect to my feelings,  
+          and warmth to my silence.
+        </p>
+      </div>
+    </section>
 
-  <section class="scene red">
-    <h1>You guided me… like a mother would.</h1>
-  </section>
+    <!-- Scene 4 -->
+    <section class="scene red">
+      <div class="scene-content">
+        <h2>You guided me… the way a mother would.</h2>
+        <p>
+          Not by force.  
+          Not by pressure.  
+          But with patience, care, and quiet understanding.
+        </p>
+      </div>
+    </section>
 
-  <section class="scene">
-    <h1>And slowly… you changed me.</h1>
-  </section>
+    <!-- Scene 5 -->
+    <section class="scene">
+      <div class="scene-content">
+        <h2>And somewhere along the way… you changed me.</h2>
+        <p>
+          Maybe not in one dramatic moment,  
+          but in a hundred small ones that slowly became unforgettable.
+        </p>
+      </div>
+    </section>
 
-  <section class="scene gold">
-    <h1>Thank you for being in my life, Renu Mishra ❤️</h1>
-    <p>— Your dever, Swayam</p>
-  </section>
+    <!-- Scene 6 -->
+    <section class="scene gold">
+      <div class="scene-content">
+        <h2>You became one of the safest people in my life.</h2>
+        <p>
+          And in a world that changes so quickly,  
+          that kind of comfort is rare… and priceless.
+        </p>
+      </div>
+    </section>
 
-</main>
+    <!-- Final Letter -->
+    <section class="scene final-scene">
+      <div class="final-card">
+        <span class="final-tag">A Note From My Heart</span>
+        <h2>Thank you… for simply being you.</h2>
+        <p>
+          Thank you for your kindness.  
+          Thank you for your patience.  
+          Thank you for every reply, every word, every little moment
+          that made me feel seen.
+        </p>
+        <p>
+          You may have entered my life as my bhabhi…  
+          but in my heart, you became so much more:
+          someone I respect deeply, someone I trust completely,
+          and someone I will always be grateful for.
+        </p>
+        <p class="signature">
+          — Your dever, <span>Swayam</span>
+        </p>
+      </div>
+    </section>
 
-<!-- 🎵 MUSIC -->
-<audio id="bgMusic" loop>
-  <source src="assets/songs/music.mp3" type="audio/mpeg">
-</audio>
+  </main>
 
-<!-- ⚙️ SCRIPT -->
-<script src="script.js"></script>
+  <!-- 🎵 BACKGROUND MUSIC -->
+  <audio id="bgMusic" loop>
+    <source src="assets/songs/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ⚙️ SHARED SCRIPT -->
+  <script src="script.js"></script>
 
 </body>
 </html>
