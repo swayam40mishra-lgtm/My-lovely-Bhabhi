@@ -20,10 +20,21 @@
     <p class="highlight">
       You can write it here. I’ll receive it. 💛
     </p>
+<form action="https://api.web3forms.com/submit" method="POST" class="message-form">
 
-    <form action="https://api.web3forms.com/submit" method="POST" class="message-form">
-      <!-bd86522e-b402-401d-9120-a82b22290ef6-->
-      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+  <input type="hidden" name="access_key" value="bd86522e-b402-401d-9120-a82b22290ef6">
+  <input type="hidden" name="subject" value="A message from your special website 💌">
+  <input type="hidden" name="from_name" value="Your Emotional Website">
+  <input type="checkbox" name="botcheck" style="display: none;">
+
+  <input type="text" name="name" placeholder="Your name (optional)">
+  <input type="email" name="email" placeholder="Your email (optional)">
+
+  <textarea name="message" rows="6" placeholder="Write what you felt..." required></textarea>
+
+  <button type="submit" class="btn">Send Your Message</button>
+
+</form>
 
       <!-- Optional redirect after submit -->
       <input type="hidden" name="subject" value="New message from your website 💌">
