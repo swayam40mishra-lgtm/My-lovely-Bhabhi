@@ -140,4 +140,88 @@ body {
 /* 🎯 SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
+  
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #fdf6f0, #f5f5f5);
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Title */
+h1 {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Paragraph */
+p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Highlight text */
+.highlight {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    text-align: center;
+    padding: 12px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
