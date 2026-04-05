@@ -24,6 +24,30 @@
     <a href="index.html" class="btn final-btn">Back to Home</a>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const finalLines = document.querySelectorAll(".final-line");
+      const finalSign = document.querySelector(".final-sign");
+      const finalBtn = document.querySelector(".final-btn");
+
+      // Make sure body is visible
+      document.body.style.opacity = "1";
+
+      finalLines.forEach((line, index) => {
+        setTimeout(() => {
+          line.classList.add("show");
+        }, index * 2200);
+      });
+
+      setTimeout(() => {
+        if (finalSign) finalSign.classList.add("show");
+      }, finalLines.length * 2200 + 800);
+
+      setTimeout(() => {
+        if (finalBtn) finalBtn.classList.add("show");
+      }, finalLines.length * 2200 + 1800);
+    });
+  </script>
+
 </body>
 </html>
