@@ -1,99 +1,134 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const intro = document.getElementById("intro"); // Make sure HTML uses id="intro"
+  // =========================================
+  // PAGE FADE IN
+  // =========================================
+  requestAnimationFrame(() => {
+    document.body.style.opacity = "1";
+  });
+
+  // =========================================
+  // INDEX PAGE INTRO
+  // =========================================
+  const introScreen = document.getElementById("intro-screen");
+  const homeEnterBtn = document.getElementById("homeEnterBtn");
+
+  if (introScreen && homeEnterBtn) {
+    homeEnterBtn.addEventListener("click", () => {
+      if (homeEnterBtn.dataset.clicked === "true") return;
+      homeEnterBtn.dataset.clicked = "true";
+
+      introScreen.classList.add("hidden");
+
+      setTimeout(() => {
+        introScreen.style.display = "none";
+      }, 850);
+    });
+  }
+
+  // =========================================
+  // STORY PAGE INTRO + TUNNEL
+  // =========================================
+  const intro = document.getElementById("intro");
   const enterBtn = document.getElementById("enterBtn");
   const tunnel = document.getElementById("tunnel");
   const ring = document.querySelector(".tunnel-ring");
   const music = document.getElementById("bgMusic");
-  const scenes = document.querySelectorAll(".scene");
 
-  // ✅ RESET INTRO ON LOAD (only if intro exists)
-  if (intro) {
-    intro.style.display = "flex";
-    intro.style.opacity = "1";
-  }
-
-  // 🎬 ENTER CLICK
-  if (enterBtn && intro) {
+  if (intro && enterBtn) {
     enterBtn.addEventListener("click", () => {
-      // Prevent multiple clicks
-      enterBtn.disabled = true;
+      if (enterBtn.dataset.clicked === "true") return;
+      enterBtn.dataset.clicked = "true";
 
-      // 🎵 MUSIC
+      // Prevent repeated clicks visually
+      enterBtn.style.pointerEvents = "none";
+      enterBtn.style.opacity = "0.7";
+
+      // Play music (user gesture allows autoplay)
       if (music) {
         music.volume = 0.3;
         music.play().catch(() => {});
       }
 
-      // 🌌 SHOW TUNNEL FIRST (optional smoothness)
+      // Activate tunnel
       if (tunnel) {
-        tunnel.style.opacity = "1";
-        tunnel.style.pointerEvents = "none";
+        tunnel.classList.add("active");
       }
 
-      // 🎯 ANIMATE RING
+      // Animate ring
       if (ring) {
-        ring.style.transform = "scale(30)";
-        ring.style.opacity = "0";
+        setTimeout(() => {
+          ring.style.transform = "scale(28)";
+          ring.style.opacity = "0";
+        }, 80);
       }
 
-      // 🎬 FADE OUT INTRO
-      intro.style.transition = "opacity 0.8s ease";
-      intro.style.opacity = "0";
+      // Fade out intro
+      intro.classList.add("hidden");
 
+      // Remove intro from layout
       setTimeout(() => {
         intro.style.display = "none";
+      }, 850);
 
-        // ⏳ REMOVE TUNNEL AFTER EFFECT
-        if (tunnel) {
-          setTimeout(() => {
-            tunnel.style.opacity = "0";
-          }, 1200);
-        }
-      }, 800);
+      // Fade tunnel away after animation
+      if (tunnel) {
+        setTimeout(() => {
+          tunnel.classList.remove("active");
+        }, 1700);
+      }
     });
   }
 
-  // ✨ SCENE SCROLL ANIMATION
-  if (scenes.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, {
-      threshold: 0.4
-    });
+  // =========================================
+  // SCROLL REVEAL (FOR .scene and .fade-section)
+  // =========================================
+  const revealItems = document.querySelectorAll(".scene, .fade-section");
 
-    scenes.forEach(scene => observer.observe(scene));
+  if (revealItems.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target); // reveal once only
+          }
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -40px 0px"
+      }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
   }
 
-  // 🔗 SMOOTH PAGE FADE-OUT FOR INTERNAL LINKS
-  const links = document.querySelectorAll("a");
+  // =========================================
+  // SMOOTH INTERNAL PAGE TRANSITION
+  // =========================================
+  const links = document.querySelectorAll("a[href]");
 
-  links.forEach(link => {
+  links.forEach((link) => {
     link.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
 
-      // Only apply for internal page links
-      if (
+      const isInternal =
         href &&
         !href.startsWith("#") &&
         !href.startsWith("http") &&
-        !this.hasAttribute("target")
-      ) {
-        e.preventDefault();
+        !href.startsWith("mailto:") &&
+        !href.startsWith("tel:") &&
+        !this.hasAttribute("target");
 
-        document.body.style.transition = "opacity 0.5s ease";
-        document.body.style.opacity = "0";
+      if (!isInternal) return;
 
-        setTimeout(() => {
-          window.location.href = href;
-        }, 500);
-      }
+      e.preventDefault();
+
+      document.body.style.opacity = "0";
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 450);
     });
   });
-
-  // ✨ FADE IN BODY ON PAGE LOAD
-  document.body.style.opacity = "1";
 });
