@@ -187,7 +187,17 @@ span.highlight-text {
   background: rgba(212, 175, 55, 0.06);
   border-color: rgba(212, 175, 55, 0.42);
 }
-
+/* FINAL PAGE NEXT BUTTON FIX */
+.final-container .btn,
+.final-page .btn,
+.final-card .btn {
+  display: inline-block;
+  margin-top: 30px;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 10;
+}
 /* =========================================================
    INTRO SCREEN (INDEX.HTML)
 ========================================================= */
