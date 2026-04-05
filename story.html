@@ -141,29 +141,7 @@
 
   </main>
 
-  <!-- 🎵 MUSIC -->
-<audio id="bgMusic" loop controls style="position:fixed; bottom:20px; left:20px; z-index:9999;">
-  <source src="assets/songs/music.mp3" type="audio/mpeg">
-  Your browser does not support audio.
-</audio>
-  
 
-  <!-- ⚙️ PAGE SCRIPT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const enterBtn = document.getElementById("enterBtn");
-      const music = document.getElementById("bgMusic");
-
-      if (enterBtn && music) {
-        enterBtn.addEventListener("click", function () {
-          music.volume = 0.3;
-          music.play().catch((err) => {
-            console.log("Music failed:", err);
-          });
-        });
-      }
-    });
-  </script>
 
   <!-- ⚙️ SHARED SCRIPT -->
   <script src="script.js"></script>
