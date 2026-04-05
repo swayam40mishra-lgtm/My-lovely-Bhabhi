@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Something for You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container fade-in">
+    <h1>Something for You</h1>
+
+    <p>
+      If this page made you feel something...  
+      if there is anything in your heart right now...
+    </p>
+
+    <p class="highlight">
+      You can write it here. I’ll receive it. 💛
+    </p>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="message-form">
+      <!-- Replace with your real access key -->
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+      <!-- Optional redirect after submit -->
+      <input type="hidden" name="subject" value="New message from your website 💌">
+      <input type="hidden" name="from_name" value="Emotional Website Message">
+
+      <input type="text" name="name" placeholder="Your name (optional)" />
+
+      <textarea 
+        name="message" 
+        rows="6" 
+        placeholder="Write what you felt..."
+        required
+      ></textarea>
+
+      <button type="submit" class="btn">Send Your Message</button>
+    </form>
+
+    <div class="buttons">
+      <a href="index.html" class="btn">Back to Home</a>
+      <a href="story.html" class="btn">Open Our Story</a>
+    </div>
+
+    <footer>
+      Made with affection by Swayam Mishra 💟
+    </footer>
+  </div>
+
+</body>
+</html>
